@@ -1,0 +1,10 @@
+<div *ngFor="let task of tasks">
+    <div>
+        <button class="task-button" (click)="redirectToTaskPage(task.id)">
+            <h2>{{task.title}}</h2>
+            <h4>{{task.description}}</h4>
+            <p>{{task.status}}</p>
+        </button>
+    </div>
+</div>
+<router-outlet></router-outlet>

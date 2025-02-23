@@ -1,0 +1,11 @@
+<div *ngIf="!hasCallErrored;else error_message">
+    <h1>Detailed view of Task {{task?.title}}</h1>
+    <p>{{task?.description}}</p>
+    <p>{{task?.status}}</p>
+</div>
+<button routerLink="/home">Home</button>
+
+<ng-template #error_message>
+    <p>Oops! That task doesn't seem to exist</p>
+</ng-template>
+<router-outlet></router-outlet>
