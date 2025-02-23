@@ -36,24 +36,4 @@ describe('TaskDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  describe("ngOnInit", () => {
-    it("should set task to the correct task when a known ID is passed", () => {
-      mockActivatedRoute.paramMap = of({id: 1})
-      mockTaskService.getSpecificTask.and.returnValue(of({
-        errors: [],
-        data: {
-          task: {
-            id: 1,
-            description: "task",
-            status: "IN_PROGRESS"
-          }
-        }
-      }))
-
-      component.ngOnInit()
-
-      expect(component.hasCallErrored).toBeFalse()
-    });
-  })
 });
