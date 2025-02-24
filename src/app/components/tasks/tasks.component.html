@@ -1,3 +1,7 @@
+<div *ngIf="isInErrorState">
+    <p>Error loading tasks, please try again later</p>
+</div>
+
 <div *ngFor="let task of tasks">
     <div>
         <button class="task-button" (click)="redirectToTaskPage(task.id)">

@@ -1,4 +1,4 @@
-<div *ngIf="!hasCallErrored;else error_message">
+<div *ngIf="!isInErrorState;else error_message">
     <h1>Detailed view of Task {{task?.title}}</h1>
     <p>{{task?.description}}</p>
     <p>{{task?.status}}</p>

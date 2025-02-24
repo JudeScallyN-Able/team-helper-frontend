@@ -18,7 +18,7 @@ export class TaskDetailsComponent implements OnInit {
   constructor(private readonly taskService: TaskService) {
   }
   task: Task | undefined;
-  hasCallErrored: boolean = false;
+  isInErrorState: boolean = false;
   private readonly route = inject(ActivatedRoute);
 
   ngOnInit() {
@@ -30,7 +30,7 @@ export class TaskDetailsComponent implements OnInit {
     ).subscribe({
       // @ts-ignore
       next: specificTask => this.task = specificTask.data.task,
-      error: err => this.hasCallErrored = true
+      error: () => this.isInErrorState = true
     })
   }
 }
